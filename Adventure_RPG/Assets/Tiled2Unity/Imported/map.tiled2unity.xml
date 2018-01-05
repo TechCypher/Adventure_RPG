@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 03/01/2018 11:47:09-->
+<!--Last exported: 18/12/2017 11:30:06-->
 <Tiled2Unity version="1.0.13.0">
   <AssignMaterial mesh="map_mesh_0001" material="roguelikeSheet_transparent" />
   <AssignMaterial mesh="map_mesh_0002" material="roguelikeSheet_transparent" />
   <AssignMaterial mesh="map_mesh_0003" material="roguelikeSheet_transparent" />
   <AssignMaterial mesh="map_mesh_0004" material="roguelikeSheet_transparent" />
   <AssignMaterial mesh="map_mesh_0005" material="roguelikeSheet_transparent" />
-  <Prefab name="map" orientation="Orthogonal" staggerAxis="Y" staggerIndex="Odd" hexSideLength="0" numLayers="6" numTilesWide="100" numTilesHigh="50" tileWidth="16" tileHeight="16" exportScale="0.0625" mapWidthInPixels="1600" mapHeightInPixels="800" backgroundColor="#808080">
+  <Prefab name="map" orientation="Orthogonal" staggerAxis="Y" staggerIndex="Odd" hexSideLength="0" numLayers="6" numTilesWide="100" numTilesHigh="50" tileWidth="16" tileHeight="16" exportScale="0.0625" mapWidthInPixels="1600" mapHeightInPixels="800" backgroundColor="#808080" scale=".0625">
     <GameObject name="Ground/terrain" x="0" y="0" z="0">
       <TileLayer offsetX="0" offsetY="0" />
       <GameObject name="roguelikeSheet_transparent" x="0" y="0" mesh="map_mesh_0001" sortingLayerName="" sortingOrder="0" opacity="1" />

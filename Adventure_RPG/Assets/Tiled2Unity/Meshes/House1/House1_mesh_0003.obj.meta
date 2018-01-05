@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: e4a8f8dad8620c243bcc90488916f34e
-timeCreated: 1510311185
+guid: d95a715ac56aa3345a283e32ec6f2efa
+timeCreated: 1510767461
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: map_mesh_0005
+    100000: House1_mesh_0003
     100002: //RootNode
-    400000: map_mesh_0005
+    400000: House1_mesh_0003
     400002: //RootNode
-    2300000: map_mesh_0005
-    3300000: map_mesh_0005
-    4300000: map_mesh_0005
+    2300000: House1_mesh_0003
+    3300000: House1_mesh_0003
+    4300000: House1_mesh_0003
   materials:
     importMaterials: 0
     materialName: 0
