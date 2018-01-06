@@ -12,19 +12,17 @@ public class UpdateCoordinates : MonoBehaviour
 
 	void Start () 
 	{
-		isPlayerMoving = PlayerControl.isPlayerMoving;
+		isPlayerMoving = PlayerControl.isPlayerMoving; // gets the bool value from the playerControl scipt
 	}
-
-	// Update is called once per frame
+		
 	void Update () 
 	{
 
-		x = player.transform.position.x;
-		y = player.transform.position.y;
+		x = player.transform.position.x; // sets the x value to the players current x position
+		y = player.transform.position.y; // sets the y value to the players current y position
 
-		x = (float)Math.Round (x, 2);
-		y = (float)Math.Round (y, 2);
-		//transform.gameObject.GetComponent<Text>().text = ("[ " + x + "," + y + " ]");
-		text.text = ("[ " + x + "," + y + " ]");
+		x = (float)Math.Round (x, 2); // rounds the x value to 2 decimal places
+		y = (float)Math.Round (y, 2); // rounds the y value to 2 decimal places
+		text.text = ("[ " + x + "," + y + " ]"); // updates the text to the current position of the player
 	}
 }

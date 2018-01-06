@@ -12,51 +12,49 @@ public class ButtonManager : MonoBehaviour {
 	public bool pauseScreen;
 
 	private Button btn;
-	// Use this for initialization
+
 	void Start () 
 	{
-		btn = button.GetComponent<Button> ();
-		btn.onClick.AddListener (SwitchScene);
+		btn = button.GetComponent<Button> (); // assigns the btn button to the button attatched to this script
+		btn.onClick.AddListener (SwitchScene); // when the button is pressed it will call the switch scene function
 	}
 	
 	void SwitchScene()
 	{
-		if (btn.name != "ExitButton") {
+		if (btn.name != "ExitButton") // When on the main menu, if the button pressed is not the exit button, it will load the next scene
+		{
 			//GameManager.PauseGame (pausePanel, false);
-			SceneManager.LoadScene (scene);
+			SceneManager.LoadScene (scene); // Loads the scence predefined by the user
 		} 
-		if (btn.name == "ExitButton") 
+		if (btn.name == "ExitButton")  // When on the main menu, if the button pressed is the exit button, the game will exit
 		{
-			Application.Quit ();
+			Application.Quit (); // Quits the application
 		} 
-		if (pauseScreen)
+		if (pauseScreen) // If the button is part of the pause screen
 		{
-			switch (btn.name) 
+			switch (btn.name) // Switch the button name
 			{
-			case("ButtonContinue"):
-				GameManager.PauseGame (pausePanel, false);
-				break;
-			case("ButtonSave"):
-				GameManager.SaveGame ();
-				//GameManager.PauseGame (pausePanel, false);
-				break;
-			case("ButtonLoad"):
-				GameManager.LoadGame ();
-				//GameManager.PauseGame (pausePanel, false);
-				break;
-			case("ButtonSettings"):
-				//GameManager.PauseGame (pausePanel, false);
-				break;
-			case("ButtonExit"):
-				SceneManager.LoadScene (scene);
-				GameManager.PauseGame (pausePanel, false);
-				break;
-			default:
-				break;
+				case("ButtonContinue"): // If the continue button is pressed
+					GameManager.PauseGame (pausePanel, false); // Hide the pausePanel
+					break;
+				case("ButtonSave"): // If the save button has been pressed
+					GameManager.SaveGame (); // Save the game
+					//GameManager.PauseGame (pausePanel, false);
+					break;
+				case("ButtonLoad"): // If the load button has been pressed
+					GameManager.LoadGame (); // Load the game
+					//GameManager.PauseGame (pausePanel, false);
+					break;
+				case("ButtonSettings"): // If the settings button has been pressed
+					//GameManager.PauseGame (pausePanel, false);
+					break;
+				case("ButtonExit"): // If the exit button has been pressed
+					SceneManager.LoadScene (scene); // load the main menu
+					GameManager.PauseGame (pausePanel, false); // Hide the pause panel
+					break;
+				default:
+					break;
 			}
 		}
-
-
-
 	}
 }

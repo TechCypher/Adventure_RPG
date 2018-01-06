@@ -7,13 +7,11 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject pasuePanel;
 
-	// Use this for initialization
 	void Start () 
 	{
 		
 	}
-	
-	// Update is called once per frame
+
 	void Update () 
 	{
 		
@@ -21,24 +19,24 @@ public class GameManager : MonoBehaviour {
 
 	public static void PauseGame(GameObject pausePanel, bool isShowing)
 	{
-		pausePanel.SetActive (isShowing);
-		if (isShowing) 
+		pausePanel.SetActive (isShowing); // Sets the pause visiblity to the isShowiing bool value
+		if (isShowing) // If the pause panel is showing
 		{
-			Time.timeScale = 0;
+			Time.timeScale = 0; // Pauses the game by stopping time
 		} 
-		else if (!isShowing) 
+		else if (!isShowing) // If the pause panel is not showing
 		{
-			Time.timeScale = 1;
+			Time.timeScale = 1; // Continues game by setting the game time to full
 		}
 	}
 
 	public static void SaveGame()
 	{
-	
+		Debug.Log ("Game Saved");
 	}
 
 	public static void LoadGame()
 	{
-		
+		Debug.Log ("Game Loaded");
 	}
 }
