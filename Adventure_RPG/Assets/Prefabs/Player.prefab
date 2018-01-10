@@ -166,7 +166,7 @@ Camera:
   field of view: 20
   orthographic: 1
   orthographic size: 3
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -278,6 +278,7 @@ MonoBehaviour:
   playerSpeed: 3
   minimapCamera: {fileID: 20346848428039460}
   pausePanel: {fileID: 1995884184673192, guid: 5b5b10350ce98154581fd1708b0cb970, type: 2}
+  mapCanvas: {fileID: 0}
 --- !u!124 &124791027605499952
 Behaviour:
   m_ObjectHideFlags: 1

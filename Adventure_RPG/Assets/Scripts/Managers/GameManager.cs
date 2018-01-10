@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	public GameObject pasuePanel;
+    public GameObject player;
 
 	void Start () 
 	{
@@ -22,11 +23,11 @@ public class GameManager : MonoBehaviour {
 		pausePanel.SetActive (isShowing); // Sets the pause visiblity to the isShowiing bool value
 		if (isShowing) // If the pause panel is showing
 		{
-			Time.timeScale = 0; // Pauses the game by stopping time
+            Time.timeScale = 0; // Pauses the game by stopping time
 		} 
 		else if (!isShowing) // If the pause panel is not showing
 		{
-			Time.timeScale = 1; // Continues game by setting the game time to full
+            Time.timeScale = 1; // Continues game by setting the game time to full
 		}
 	}
 
