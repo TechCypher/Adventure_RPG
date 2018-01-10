@@ -901,6 +901,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1964774167}
-  scene: MainMap
+  scene: Main
   pausePanel: {fileID: 0}
   pauseScreen: 0

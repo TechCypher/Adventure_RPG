@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 78a117a8c8f92d847a8d2b4ed41dfe32
+timeCreated: 1515608795
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Zebulon
+  fontNames:
+  - Zebulon
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

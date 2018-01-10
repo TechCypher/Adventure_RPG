@@ -4,13 +4,15 @@ using UnityEngine.UI;
 
 public class UpdateCoordinates : MonoBehaviour
 {
-	public GameObject player;
+    #region Varibles
+    public GameObject player;
 	public Text text;
 
 	private float x, y;
 	private bool isPlayerMoving;
+    #endregion
 
-	void Start () 
+    void Start () 
 	{
 		isPlayerMoving = PlayerControl.isPlayerMoving; // gets the bool value from the playerControl scipt
 	}

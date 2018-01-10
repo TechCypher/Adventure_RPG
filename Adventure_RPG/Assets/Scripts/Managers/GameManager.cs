@@ -3,22 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour {
-
-	public GameObject pasuePanel;
+public class GameManager : MonoBehaviour
+{
+    #region Varibles
+    public GameObject pausePanel;
     public GameObject player;
-
-	void Start () 
+    #endregion
+    #region Start Code
+    void Start () 
 	{
-		
+		//pausePanel.SetActive (false);
+		PauseGame (pausePanel, false);
 	}
-
-	void Update () 
-	{
-		
-	}
-
-	public static void PauseGame(GameObject pausePanel, bool isShowing)
+    #endregion
+    #region Game Management
+    public static void PauseGame(GameObject pausePanel, bool isShowing)
 	{
 		pausePanel.SetActive (isShowing); // Sets the pause visiblity to the isShowiing bool value
 		if (isShowing) // If the pause panel is showing
@@ -40,4 +39,5 @@ public class GameManager : MonoBehaviour {
 	{
 		Debug.Log ("Game Loaded");
 	}
+    #endregion
 }

@@ -3,24 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadArea : MonoBehaviour {
+public class LoadArea : MonoBehaviour
+{
+    #region Varibles
+    public string scene;
+    #endregion
 
-	public string scene;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-	void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.tag == "Player") {
-			SceneManager.LoadScene (scene);
+		if (other.tag == "Player") // If  the collider is the player, load the scene
+        {
+			SceneManager.LoadScene (scene); // Load the scene
 		}
 	}
 }

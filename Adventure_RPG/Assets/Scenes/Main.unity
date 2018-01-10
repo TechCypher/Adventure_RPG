@@ -108,6 +108,11 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &104358801 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1995884184673192, guid: 5b5b10350ce98154581fd1708b0cb970,
+    type: 2}
+  m_PrefabInternal: {fileID: 2043358709}
 --- !u!1 &194723034
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,13 +137,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 194723034}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b09856aa05c68dc4bb452ea0678975f8, type: 3}
+  m_Script: {fileID: 11500000, guid: c3e12fd9f84456f478b917c2217250ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  gameObjectActive: 0000
+  pausePanel: {fileID: 0}
+  player: {fileID: 0}
 --- !u!4 &194723036
 Transform:
   m_ObjectHideFlags: 0
@@ -468,9 +471,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114302846819372748, guid: b2ae0a68826fc47458b623ffac0c178f,
+        type: 2}
+      propertyPath: pausePanel
+      value: 
+      objectReference: {fileID: 104358801}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2ae0a68826fc47458b623ffac0c178f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1728955391 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1849868000872842, guid: b2ae0a68826fc47458b623ffac0c178f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1714404438}
 --- !u!1001 &2043358709
 Prefab:
   m_ObjectHideFlags: 0
@@ -572,11 +585,15 @@ Prefab:
         type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1849868000872842, guid: b2ae0a68826fc47458b623ffac0c178f,
-        type: 2}
+      objectReference: {fileID: 1728955391}
     - target: {fileID: 1995884184673192, guid: 5b5b10350ce98154581fd1708b0cb970, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114967396913640828, guid: 5b5b10350ce98154581fd1708b0cb970,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b5b10350ce98154581fd1708b0cb970, type: 2}

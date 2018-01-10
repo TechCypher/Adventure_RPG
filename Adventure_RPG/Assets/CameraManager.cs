@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraManager : MonoBehaviour {
-
-	public Transform target;
+public class CameraManager : MonoBehaviour
+{
+    #region Varibles
+    public Transform target;
 	public float cameraSpeed = 5f;
+    #endregion
 
-	void Start () 
+    void Start () 
 	{
 		
 	}
