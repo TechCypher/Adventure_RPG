@@ -10,8 +10,8 @@ public class PlayerStartPoint : MonoBehaviour
     #endregion
 
     void Start ()
-    { 
-		player = FindObjectOfType<PlayerControl> (); //Finds the player attatched to the PlayerControl script
-		player.transform.position = transform.position; // Moves the player to the place where the start point is
-	}
+    {
+        player = FindObjectOfType<PlayerControl>(); //Finds the player attatched to the PlayerControl script
+        player.transform.position = transform.position; // Moves the player to the place where the start point is
+    }
 }

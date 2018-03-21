@@ -275,10 +275,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323df3dc5ee59794bbaadf1f2db49745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 3
+  playerSpeed: 5
   minimapCamera: {fileID: 20346848428039460}
   pausePanel: {fileID: 1995884184673192, guid: 5b5b10350ce98154581fd1708b0cb970, type: 2}
-  mapCanvas: {fileID: 0}
 --- !u!124 &124791027605499952
 Behaviour:
   m_ObjectHideFlags: 1
