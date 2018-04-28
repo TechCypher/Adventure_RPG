@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public class PlayerStats
+    public class PS
     {
         float health;
         float xp;

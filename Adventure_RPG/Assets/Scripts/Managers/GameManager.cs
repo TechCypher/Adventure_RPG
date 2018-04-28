@@ -10,25 +10,34 @@ public class GameManager : MonoBehaviour
     #region Varibles
     public GameObject pausePanel;
     public static GameObject player;
-    public Text points;
+    public static Text points;
     public static string _area;
+    public static bool gameLoaded;
     public static PlayerControl PC;
     public GameObject sidePanel;
     public GameObject[] panels;
+    
 
+    private Text[] text;
     private static string area;
+    private static PlayerStats stats;
     #endregion
     #region Start Code
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         PC = player.GetComponent<PlayerControl>();
+        stats = FindObjectOfType<PlayerStats>();
         
         //pausePanel.SetActive (false);
         PauseGame(pausePanel, false);
         LoadGame(player.transform);
-        points.text = PlayerPrefs.GetInt("Points").ToString();
-
+        //points.text = PlayerPrefs.GetInt("Points").ToString();
+        text = FindObjectsOfType<Text>();
+        for (int i = 0; i < text.Length; i++)
+        {
+            if(text[i].name == "Points") { points = text[i]; }
+        }
         foreach (GameObject item in panels)
         {
             item.SetActive(false);
@@ -53,7 +62,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        points.text = "Points: " + PC.points.ToString();
+        //points.text = "Points: " + PC.points.ToString();
         if (!sidePanel.activeSelf)
         {
             foreach (GameObject item in panels)
@@ -65,12 +74,16 @@ public class GameManager : MonoBehaviour
 
     public static void SaveGame(Transform _player)
 	{
-		Debug.Log ("Game Saved: Player Coords " + _player.transform.position.ToString() + " " + "Points: " + PC.points.ToString());
+		Debug.Log ("Game Saved: Player Coords " + _player.transform.position.ToString() + " " + "Points: " + PC.points.ToString() + " XP: " + stats.currentXP + " Level: " + stats.currentLevel + " Health: " + stats.currentHP);
 
         PlayerPrefs.SetFloat("playerCoordX", _player.transform.position.x);
         PlayerPrefs.SetFloat("playerCoordY", _player.transform.position.y);
         PlayerPrefs.SetFloat("playerCoordZ", _player.transform.position.z);
         PlayerPrefs.SetFloat("playerPoints", PC.points);
+        PlayerPrefs.SetInt("playerXP", stats.currentXP);
+        PlayerPrefs.SetInt("playerLevel", stats.currentLevel);
+        PlayerPrefs.SetInt("playerHealth", stats.currentHP);
+        gameLoaded = false;
     }
 
 	public static void LoadGame(Transform _player)
@@ -80,19 +93,28 @@ public class GameManager : MonoBehaviour
         float pY = PlayerPrefs.GetFloat("playerCoordY");
         float pZ = PlayerPrefs.GetFloat("playerCoordZ");
         float _points = PlayerPrefs.GetFloat("playerPoints");
+        int xp = PlayerPrefs.GetInt("playerXP");
+        int level = PlayerPrefs.GetInt("playerLevel");
+        int health = PlayerPrefs.GetInt("playerHealth");
 
-        
+        //points.text = _points.ToString();
 
         Vector3 pPos = new Vector3(pX, pY, pZ);
 
         if (_player.position != null) // Checks to make sure that the player exists
         {
             _player.position = pPos; // Teleports the player to the saved position
-            Debug.Log("Game Loaded: Player Coords " + pPos.ToString() + " Points: " + _points.ToString());
+            Debug.Log("Game Loaded: Player Coords " + pPos.ToString() + " Points: " + _points.ToString() + " XP: " + xp + " Level: " + level + " Health: " + health);
             
         }
+        gameLoaded = true;
 
 	}
+
+    public static void GetPoints(Text points)
+    {
+        points.text = PlayerPrefs.GetFloat("playerPoints").ToString();
+    }
 
     public static void AddPoints(float _points)
     {

@@ -9,6 +9,8 @@ TagManager:
   - Item
   - NPC
   - Minimap
+  - Slime
+  - Weapon
   layers:
   - Default
   - TransparentFX
