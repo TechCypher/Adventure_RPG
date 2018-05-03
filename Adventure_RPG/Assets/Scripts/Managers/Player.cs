@@ -14,7 +14,5 @@ public class Player : MonoBehaviour
 
     public class PlayerSkills
     {
-        
     }
-
 }

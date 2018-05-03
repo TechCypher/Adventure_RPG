@@ -10,7 +10,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using UnityEngine;
 
 #if T2U_USE_ASSERTIONS
@@ -25,37 +24,32 @@ namespace Tiled2Unity
         public float Duration = -1;
         public float TotalAnimationTime = -1;
 
-        private float timer = 0;
+        float timer = 0;
 
-        private MeshRenderer meshRenderer = null;
+        MeshRenderer meshRenderer;
 
-        private void Awake()
-        {
-            this.meshRenderer = this.GetComponent<MeshRenderer>();
-        }
+        void Awake() { meshRenderer = this.GetComponent<MeshRenderer>(); }
 
-        private void Start()
+        void Start()
         {
 #if T2U_USE_ASSERTIONS
-            Assert.IsTrue(this.StartTime >= 0, "StartTime cannot be negative");
-            Assert.IsTrue(this.Duration > 0, "Duration must be positive and non-zero.");
-            Assert.IsTrue(this.TotalAnimationTime > 0, "Total time of animation must be positive non-zero");
+            Assert.IsTrue(StartTime >= 0, "StartTime cannot be negative");
+            Assert.IsTrue(Duration > 0, "Duration must be positive and non-zero.");
+            Assert.IsTrue(TotalAnimationTime > 0, "Total time of animation must be positive non-zero");
 #endif
-            this.timer = 0.0f;
+            timer = 0.0f;
         }
 
-        private void Update()
+        void Update()
         {
-            this.timer += Time.deltaTime;
+            timer += Time.deltaTime;
 
             // Roll around the time if needed
-            while (this.timer > this.TotalAnimationTime)
-            {
-                this.timer -= this.TotalAnimationTime;
-            }
+            while (timer > TotalAnimationTime)
+                timer -= TotalAnimationTime;
 
-            this.meshRenderer.enabled = timer >= this.StartTime && timer < (this.StartTime + this.Duration);
+
+            meshRenderer.enabled = timer >= StartTime && timer < (StartTime + Duration);
         }
-
     }
 }

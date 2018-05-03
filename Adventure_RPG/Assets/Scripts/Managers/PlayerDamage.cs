@@ -6,25 +6,18 @@ public class PlayerDamage : MonoBehaviour
 {
     public int damage = 5;
 
-    private PlayerStats stats;
-    private int currentDamage;
+    PlayerStats stats;
+    int currentDamage;
 
-    private void Start()
-    {
-        stats = FindObjectOfType<PlayerStats>();
-    }
+    void Start() { stats = FindObjectOfType<PlayerStats>(); }
 
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
         {
             currentDamage = damage - stats.currentDefense;
-            if (currentDamage < 0)
-            {
-                currentDamage = 1;
-            }
+            if (currentDamage < 0) currentDamage = 1;
             other.gameObject.GetComponent<Health>().Damage(currentDamage);
         }
     }
-
 }

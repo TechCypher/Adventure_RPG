@@ -4,24 +4,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LocationText : MonoBehaviour {
-
+public class LocationText : MonoBehaviour
+{
     #region Varibles
 
     public Text coords;
     public Text area;
     public Transform player;
 
-    private float x, y;
-    
+    float x, y;
+
     #endregion
 
-    void Start ()
+    void Start()
     {
+    }
 
-	}
-	
-	void Update ()
+    void Update()
     {
         area.text = GameManager.GetArea();
         x = player.position.x;
@@ -30,7 +29,6 @@ public class LocationText : MonoBehaviour {
         x = (float)Math.Round(x, 2);
         y = (float)Math.Round(y, 2);
 
-        coords.text = "["+ x + "," + y + "]";
-
+        coords.text = "[" + x + "," + y + "]";
     }
 }

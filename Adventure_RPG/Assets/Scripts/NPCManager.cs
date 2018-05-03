@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class NPCManager : MonoBehaviour
 {
     #region Varibles
@@ -12,11 +11,11 @@ public class NPCManager : MonoBehaviour
     public bool isWalking;
     public bool canMove;
 
-    private float walkCounter;
-    private float waitCounter;
-    private int walkDirection;
-    private Rigidbody2D rb;
-    private DialogueManager DM;
+    float walkCounter;
+    float waitCounter;
+    int walkDirection;
+    Rigidbody2D rb;
+    DialogueManager DM;
     #endregion
     #region Start
     void Start()
@@ -28,6 +27,7 @@ public class NPCManager : MonoBehaviour
         ChooseDirection();
         canMove = true;
     }
+
     #endregion
     #region Update
     void Update()
@@ -37,15 +37,17 @@ public class NPCManager : MonoBehaviour
         {
             canMove = true;
         }
+
         if (!canMove)
         {
             rb.velocity = Vector2.zero;
             return;
         }
+
         if (isWalking) // Checks to see if the NPC is moving
         {
             walkCounter -= Time.deltaTime;
-            
+
             switch (walkDirection)
             {
                 case 0:
@@ -63,16 +65,18 @@ public class NPCManager : MonoBehaviour
                 default:
                     break;
             }
+
             if (walkCounter < 0) { isWalking = false; waitCounter = waitTime; }
         }
         else
         {
             waitCounter -= Time.deltaTime;
             rb.velocity = Vector2.zero;
-            if(waitCounter < 0) { ChooseDirection(); }
+            if (waitCounter < 0) ChooseDirection();
         }
         #endregion
     }
+
     #endregion
     #region Direction
     void ChooseDirection()

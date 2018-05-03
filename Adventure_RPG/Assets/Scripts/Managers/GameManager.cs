@@ -16,11 +16,10 @@ public class GameManager : MonoBehaviour
     public static PlayerControl PC;
     public GameObject sidePanel;
     public GameObject[] panels;
-    
 
-    private Text[] text;
-    private static string area;
-    private static PlayerStats stats;
+    Text[] text;
+    static string area;
+    static PlayerStats stats;
     #endregion
     #region Start Code
     void Start()
@@ -28,53 +27,50 @@ public class GameManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         PC = player.GetComponent<PlayerControl>();
         stats = FindObjectOfType<PlayerStats>();
-        
-        //pausePanel.SetActive (false);
+
+        // pausePanel.SetActive (false);
         PauseGame(pausePanel, false);
         LoadGame(player.transform);
-        //points.text = PlayerPrefs.GetInt("Points").ToString();
+        // points.text = PlayerPrefs.GetInt("Points").ToString();
         text = FindObjectsOfType<Text>();
         for (int i = 0; i < text.Length; i++)
-        {
-            if(text[i].name == "Points") { points = text[i]; }
-        }
+            if (text[i].name == "Points") points = text[i];
+        
+
         foreach (GameObject item in panels)
-        {
             item.SetActive(false);
-        }
+        
     }
-    
+
     #endregion
     #region Game Management
     public static void PauseGame(GameObject pausePanel, bool isShowing)
-	{
-		pausePanel.SetActive (isShowing); // Sets the pause visiblity to the isShowiing bool value
-		if (isShowing) // If the pause panel is showing
-		{
-            Time.timeScale = 0; // Pauses the game by stopping time
-		} 
-		else if (!isShowing) // If the pause panel is not showing
-		{
-            Time.timeScale = 1; // Continues game by setting the game time to full
-		}
-	}
-    
-
-    private void Update()
     {
-        //points.text = "Points: " + PC.points.ToString();
-        if (!sidePanel.activeSelf)
+        pausePanel.SetActive(isShowing); // Sets the pause visiblity to the isShowiing bool value
+        if (isShowing) // If the pause panel is showing
         {
-            foreach (GameObject item in panels)
-            {
-                item.SetActive(false);
-            }
+            Time.timeScale = 0; // Pauses the game by stopping time
+        }
+        else if (!isShowing) // If the pause panel is not showing
+        {
+            Time.timeScale = 1; // Continues game by setting the game time to full
         }
     }
 
-    public static void SaveGame(Transform _player)
-	{
-		Debug.Log ("Game Saved: Player Coords " + _player.transform.position.ToString() + " " + "Points: " + PC.points.ToString() + " XP: " + stats.currentXP + " Level: " + stats.currentLevel + " Health: " + stats.currentHP);
+    void Update()
+    {
+        // points.text = "Points: " + PC.points.ToString();
+        if (!sidePanel.activeSelf)
+        {
+            foreach (GameObject item in panels)
+                item.SetActive(false);
+            
+        }
+    }
+
+    public static void SaveGame(Transform _player) // When this function is called, it will store the data into the playerPrefs database
+    {
+        Debug.Log("Game Saved: Player Coords " + _player.transform.position.ToString() + " " + "Points: " + PC.points.ToString() + " XP: " + stats.currentXP + " Level: " + stats.currentLevel + " Health: " + stats.currentHP);
 
         PlayerPrefs.SetFloat("playerCoordX", _player.transform.position.x);
         PlayerPrefs.SetFloat("playerCoordY", _player.transform.position.y);
@@ -86,9 +82,9 @@ public class GameManager : MonoBehaviour
         gameLoaded = false;
     }
 
-	public static void LoadGame(Transform _player)
-	{
-		Debug.Log ("Game Loaded");
+    public static void LoadGame(Transform _player) // When this function is called, it will retrive the various data and put it into temporary data slots
+    {
+        Debug.Log("Game Loaded");
         float pX = PlayerPrefs.GetFloat("playerCoordX");
         float pY = PlayerPrefs.GetFloat("playerCoordY");
         float pZ = PlayerPrefs.GetFloat("playerCoordZ");
@@ -97,7 +93,11 @@ public class GameManager : MonoBehaviour
         int level = PlayerPrefs.GetInt("playerLevel");
         int health = PlayerPrefs.GetInt("playerHealth");
 
-        //points.text = _points.ToString();
+        stats.currentHP = health;
+        stats.currentLevel = level;
+        stats.currentXP = xp;
+
+        // points.text = _points.ToString();
 
         Vector3 pPos = new Vector3(pX, pY, pZ);
 
@@ -105,11 +105,10 @@ public class GameManager : MonoBehaviour
         {
             _player.position = pPos; // Teleports the player to the saved position
             Debug.Log("Game Loaded: Player Coords " + pPos.ToString() + " Points: " + _points.ToString() + " XP: " + xp + " Level: " + level + " Health: " + health);
-            
         }
-        gameLoaded = true;
 
-	}
+        gameLoaded = true;
+    }
 
     public static void GetPoints(Text points)
     {
@@ -129,7 +128,7 @@ public class GameManager : MonoBehaviour
             area = PlayerPrefs.GetString("area");
             return area;
         }
-        
+
         return null;
     }
     #endregion

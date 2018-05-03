@@ -1,25 +1,25 @@
 fileFormatVersion: 2
 guid: d36f006310b959541ac547cf51093cd5
-timeCreated: 1510310908
+timeCreated: 1525034947
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: GamesPlusJames_RPG-Character_0
-    21300002: GamesPlusJames_RPG-Character_1
-    21300004: GamesPlusJames_RPG-Character_2
-    21300006: GamesPlusJames_RPG-Character_3
-    21300008: GamesPlusJames_RPG-Character_4
-    21300010: GamesPlusJames_RPG-Character_5
-    21300012: GamesPlusJames_RPG-Character_6
-    21300014: GamesPlusJames_RPG-Character_7
-    21300016: GamesPlusJames_RPG-Character_8
-    21300018: GamesPlusJames_RPG-Character_9
-    21300020: GamesPlusJames_RPG-Character_10
-    21300022: GamesPlusJames_RPG-Character_11
-    21300024: GamesPlusJames_RPG-Character_12
-    21300026: GamesPlusJames_RPG-Character_13
-    21300028: GamesPlusJames_RPG-Character_14
-    21300030: GamesPlusJames_RPG-Character_15
+    21300000: RPG-Character_0
+    21300002: RPG-Character_1
+    21300004: RPG-Character_2
+    21300006: RPG-Character_3
+    21300008: RPG-Character_4
+    21300010: RPG-Character_5
+    21300012: RPG-Character_6
+    21300014: RPG-Character_7
+    21300016: RPG-Character_8
+    21300018: RPG-Character_9
+    21300020: RPG-Character_10
+    21300022: RPG-Character_11
+    21300024: RPG-Character_12
+    21300026: RPG-Character_13
+    21300028: RPG-Character_14
+    21300030: RPG-Character_15
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -86,7 +86,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_0
+      name: RPG-Character_0
       rect:
         serializedVersion: 2
         x: 0
@@ -94,12 +94,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_1
+      name: RPG-Character_1
       rect:
         serializedVersion: 2
         x: 16
@@ -107,12 +107,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_2
+      name: RPG-Character_2
       rect:
         serializedVersion: 2
         x: 32
@@ -120,12 +120,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_3
+      name: RPG-Character_3
       rect:
         serializedVersion: 2
         x: 48
@@ -133,12 +133,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_4
+      name: RPG-Character_4
       rect:
         serializedVersion: 2
         x: 0
@@ -146,12 +146,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_5
+      name: RPG-Character_5
       rect:
         serializedVersion: 2
         x: 16
@@ -159,12 +159,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_6
+      name: RPG-Character_6
       rect:
         serializedVersion: 2
         x: 32
@@ -172,12 +172,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_7
+      name: RPG-Character_7
       rect:
         serializedVersion: 2
         x: 48
@@ -185,12 +185,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_8
+      name: RPG-Character_8
       rect:
         serializedVersion: 2
         x: 0
@@ -198,12 +198,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_9
+      name: RPG-Character_9
       rect:
         serializedVersion: 2
         x: 16
@@ -211,12 +211,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_10
+      name: RPG-Character_10
       rect:
         serializedVersion: 2
         x: 32
@@ -224,12 +224,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_11
+      name: RPG-Character_11
       rect:
         serializedVersion: 2
         x: 48
@@ -237,12 +237,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_12
+      name: RPG-Character_12
       rect:
         serializedVersion: 2
         x: 0
@@ -250,12 +250,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_13
+      name: RPG-Character_13
       rect:
         serializedVersion: 2
         x: 16
@@ -263,12 +263,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_14
+      name: RPG-Character_14
       rect:
         serializedVersion: 2
         x: 32
@@ -276,12 +276,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: GamesPlusJames_RPG-Character_15
+      name: RPG-Character_15
       rect:
         serializedVersion: 2
         x: 48
@@ -289,7 +289,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

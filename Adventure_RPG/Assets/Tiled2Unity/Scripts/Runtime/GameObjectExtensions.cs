@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using UnityEngine;
 
 namespace Tiled2Unity
@@ -13,8 +12,7 @@ namespace Tiled2Unity
         {
             // Get the component if it exists
             T component = gameObject.GetComponent<T>();
-            if (component != null)
-                return component;
+            if (component != null) return component;
 
             // Add the component
             return gameObject.AddComponent<T>();

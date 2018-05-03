@@ -9,15 +9,15 @@ public class EnemyDamage : MonoBehaviour
     public Transform hitPoint;
     public GameObject damageNumber;
 
-    private PlayerStats stats;
-    private int currentDamage;
+    PlayerStats stats;
+    int currentDamage;
 
-    private void Start()
+    void Start()
     {
         stats = FindObjectOfType<PlayerStats>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Slime")
         {

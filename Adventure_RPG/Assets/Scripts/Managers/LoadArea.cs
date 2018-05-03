@@ -7,25 +7,26 @@ public class LoadArea : MonoBehaviour
 {
     #region Varibles
     public string scene;
-    private Scene main;
+    Scene main;
     PlayerStartPoint spawnPoint;
     GameObject player;
     PlayerControl PC;
     #endregion
     #region Start stuff
-    private void Start()
+    void Start()
     {
         spawnPoint = GetComponent<PlayerStartPoint>();
         player = GameObject.FindGameObjectWithTag("player");
         PC = player.GetComponent<PlayerControl>();
     }
+
     #endregion
     #region Trigger
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player") // If  the collider is the player, load the scene
         {
-            string currentScene = SceneManager.GetActiveScene().ToString(); 
+            string currentScene = SceneManager.GetActiveScene().ToString();
             if (currentScene == "Main")
             {
                 GameManager.SaveGame(PC.playerT);
@@ -46,9 +47,9 @@ public class LoadArea : MonoBehaviour
                 SceneManager.LoadSceneAsync(scene);
                 SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
             }
-             
         }
     }
+
     #endregion
     #region Store Position of Player
     void StoreColliderPosition(Collider2D other)
@@ -60,12 +61,13 @@ public class LoadArea : MonoBehaviour
     }
 
     static void StorePlayerPosition(Transform player)
-    { 
+    {
         Vector3 pos = player.position;
         PlayerPrefs.SetFloat("playerXScene", pos.x);
         PlayerPrefs.SetFloat("playerYScene", pos.y);
         PlayerPrefs.SetFloat("playerZScene", pos.z);
     }
+
     #endregion
     #region Load player and scene
     public static void Load(string scene, Transform player)

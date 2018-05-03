@@ -4,32 +4,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class ShopManager : MonoBehaviour {
-
-    private GameObject player;
-    //private PlayerControl PC;
-    //private GameManager GM;
+public class ShopManager : MonoBehaviour
+{
+    GameObject player;
+    // private PlayerControl PC;
+    // private GameManager GM;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        //PC = player.GetComponent<PlayerControl>();
-        //GM = FindObjectOfType<GameManager>();
+        // PC = player.GetComponent<PlayerControl>();
+        // GM = FindObjectOfType<GameManager>();
     }
-	
-	void Update ()
-    {
-		
-	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Update()
+    {
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
         /*if (Input.GetKeyDown(KeyCode.Space))
         {
             OpenShop();
         }*/
-
-        
 
         OpenShop();
     }
@@ -46,40 +43,31 @@ public class ShopManager : MonoBehaviour {
         GameManager.LoadGame(player.transform);
         SceneManager.LoadScene("Main");
     }
-
 }
-
 
 public class ItemManager : ShopManager
 {
-
-    private void Start()
+    void Start()
     {
-        
     }
 
     void AddItem() // Shop panel can display 16 items at a time
     {
-        
     }
 
     void RemoveItem()
     {
-
     }
 
     void BuyItem()
     {
-        
     }
 
     void SellItem()
     {
-
     }
 
     static void UpdateShop()
     {
-
     }
 }

@@ -9,27 +9,29 @@ public class DialogueManager : MonoBehaviour
     public Text text;
     public bool dialogue;
     public string[] dialogueArray;
-    private int currentIndex;
-    private void Start()
+    int currentIndex;
+    void Start()
     {
         dialogue = box.activeSelf;
         if (dialogue) { box.SetActive(false); dialogue = false; }
     }
 
-    private void Update()
+    void Update()
     {
         if (dialogue && Input.GetKeyDown(KeyCode.Space))
         {
-            //box.SetActive(false);
-            //dialogue = false;
+            // box.SetActive(false);
+            // dialogue = false;
             currentIndex++;
         }
-        if(currentIndex >= dialogueArray.Length)
+
+        if (currentIndex >= dialogueArray.Length)
         {
             box.SetActive(false);
             dialogue = false;
             currentIndex = 0;
         }
+
         text.text = dialogueArray[currentIndex];
     }
 

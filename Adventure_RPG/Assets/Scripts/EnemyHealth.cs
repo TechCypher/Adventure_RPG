@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-
     #region Varibles
     public int maxHP = 50;
     public int currentHP;
     public int XP;
 
-    private PlayerStats stats;
+    PlayerStats stats;
     #endregion
     void Start()
     {
@@ -27,13 +26,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void Damage(int damage)
-    {
-        currentHP -= damage;
-    }
+    public void Damage(int damage) { currentHP -= damage; }
 
-    public void Revive()
-    {
-        currentHP = maxHP;
-    }
+    public void Revive() { currentHP = maxHP; }
 }

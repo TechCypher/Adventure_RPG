@@ -13,18 +13,15 @@ public class UIManager : MonoBehaviour
     public Text XPText;
     public Health playerHealth;
 
-    private PlayerStats stats;
-    private int xp;
-    private int level;
+    PlayerStats stats;
+    int xp;
+    int level;
     #endregion
-    private void Start()
-    {
-        stats = GetComponent<PlayerStats>();
-    }
+    void Start() { stats = GetComponent<PlayerStats>(); }
 
-    private void Update()
+    void Update()
     {
-        //checkForValues();
+        // checkForValues();
         xp = stats.currentXP;
         level = stats.currentLevel;
         healthBar.maxValue = playerHealth.maxHP;
@@ -35,6 +32,7 @@ public class UIManager : MonoBehaviour
         levelText.text = "Level: " + level;
         XPText.text = "XP: " + xp + "/" + stats.requiredXP[level];
     }
+
     void checkForValues()
     {
         if (GameManager.gameLoaded)
@@ -43,6 +41,7 @@ public class UIManager : MonoBehaviour
             {
                 xp = PlayerPrefs.GetInt("playerXP");
             }
+
             if (PlayerPrefs.HasKey("playerLevel"))
             {
                 level = PlayerPrefs.GetInt("playerLevel");
@@ -54,5 +53,4 @@ public class UIManager : MonoBehaviour
             level = stats.currentLevel;
         }
     }
-
 }

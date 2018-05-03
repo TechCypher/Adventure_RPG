@@ -7,12 +7,12 @@ public class Dialogue : MonoBehaviour
     public string dialogue;
     public DialogueManager dm;
 
-    private void Start()
+    void Start()
     {
-        //dm = FindObjectOfType<DialogueManager>();
+        // dm = FindObjectOfType<DialogueManager>();
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {

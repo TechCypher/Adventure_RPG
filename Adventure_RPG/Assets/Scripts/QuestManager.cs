@@ -8,13 +8,9 @@ public class QuestManager : MonoBehaviour
     public bool[] completedQuest;
     public DialogueManager DM;
 
-    private void Start()
-    {
-        completedQuest = new bool[quests.Length];
-    }
+    void Start() { completedQuest = new bool[quests.Length]; }
 
     public void ShowQuest(string quest)
     {
-
     }
 }

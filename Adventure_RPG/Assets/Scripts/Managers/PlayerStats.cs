@@ -15,9 +15,9 @@ public class PlayerStats : MonoBehaviour
     public int[] attackLevels;
     public int[] defenseLevels;
 
-    private Health health;
+    Health health;
     #endregion
-    private void Start()
+    void Start()
     {
         health = FindObjectOfType<Health>();
         if (currentXP > 0 && currentXP < requiredXP[currentLevel + 1]) { currentLevel = 1; }
@@ -26,7 +26,7 @@ public class PlayerStats : MonoBehaviour
         currentDefense = defenseLevels[1];
     }
 
-    private void Update()
+    void Update()
     {
         if (currentXP >= requiredXP[currentLevel])
         {
@@ -34,10 +34,7 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public void AddXP(int XP)
-    {
-        currentXP += XP;
-    }
+    public void AddXP(int XP) { currentXP += XP; }
 
     public void LevelUp()
     {

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using UnityEngine;
 
 namespace Tiled2Unity
@@ -15,9 +14,9 @@ namespace Tiled2Unity
 
         [Header("Tile Object Properties")]
         [Tooltip("Imported Tile Width (after scaling and transforms applied)")]
-        public float TileWidth = 0.0f;
+        public float TileWidth;
 
         [Tooltip("Imported Tile Height (after scaling and transforms applied)")]
-        public float TileHeight = 0.0f;
+        public float TileHeight;
     }
 }

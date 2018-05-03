@@ -8,7 +8,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-
 using UnityEditor;
 #endif
 
@@ -33,7 +32,7 @@ namespace Tiled2Unity
             get
             {
                 // tiled2unity.xml is two extensions
-                string name = Path.GetFileNameWithoutExtension(this.Tiled2UnityXmlPath);
+                string name = Path.GetFileNameWithoutExtension(Tiled2UnityXmlPath);
                 name = Path.GetFileNameWithoutExtension(name);
                 return name;
             }
@@ -54,11 +53,11 @@ namespace Tiled2Unity
         // List of all assets paths we are importing
         public List<string> ImportingAssets = new List<string>();
 
-        public XDocument XmlDocument = null;
+        public XDocument XmlDocument;
 
         // List of warnings and errors collected over the import process
-        private List<string> ImportWarnings = new List<string>();
-        private List<string> ImportErrors = new List<string>();
+        List<string> ImportWarnings = new List<string>();
+        List<string> ImportErrors = new List<string>();
 
         // The same texture may be imported by multiple import behaviours
         public static IEnumerable<ImportBehaviour> EnumerateImportBehaviors_ByWaitingTexture(string assetName)
@@ -127,73 +126,68 @@ namespace Tiled2Unity
 
         public bool IsTextureImportingCompleted()
         {
-            return this.ImportComplete_Textures.Count == this.ImportWait_Textures.Count;
+            return ImportComplete_Textures.Count == ImportWait_Textures.Count;
         }
 
         public bool IsMaterialImportingCompleted()
         {
-            return this.ImportComplete_Materials.Count == this.ImportWait_Materials.Count;
+            return ImportComplete_Materials.Count == ImportWait_Materials.Count;
         }
 
         public bool IsMeshImportingCompleted()
         {
-            return this.ImportComplete_Meshes.Count == this.ImportWait_Meshes.Count;
+            return ImportComplete_Meshes.Count == ImportWait_Meshes.Count;
         }
 
         public bool IsPrefabImportingCompleted()
         {
-            return this.ImportComplete_Prefabs.Count == this.ImportWait_Prefabs.Count;
+            return ImportComplete_Prefabs.Count == ImportWait_Prefabs.Count;
         }
 
         public void ImportTiled2UnityAsset(string assetPath)
         {
-            if (!this.ImportingAssets.Contains(assetPath, StringComparer.OrdinalIgnoreCase))
+            if (!ImportingAssets.Contains(assetPath, StringComparer.OrdinalIgnoreCase))
             {
-                this.ImportingAssets.Add(assetPath);
+                ImportingAssets.Add(assetPath);
                 AssetDatabase.ImportAsset(assetPath, ImportAssetOptions.ForceSynchronousImport);
             }
         }
 
-        public void DestroyImportBehaviour()
-        {
-            UnityEngine.Object.DestroyImmediate(this.gameObject);
-        }
+        public void DestroyImportBehaviour() { UnityEngine.Object.DestroyImmediate(gameObject); }
 
         public void RecordWarning(string fmt, params object[] args)
         {
             string warning = String.Format(fmt, args);
             Debug.LogWarning(warning);
-            this.ImportWarnings.Add(warning);
+            ImportWarnings.Add(warning);
         }
 
         public void RecordError(string fmt, params object[] args)
         {
             string error = String.Format(fmt, args);
             Debug.LogError(error);
-            this.ImportErrors.Add(error);
+            ImportErrors.Add(error);
         }
 
         public void ReportPrefabImport(string prefabPath)
         {
             // Report any warnings or errors
             Action<object> func = Debug.Log;
-            if (this.ImportWarnings.Count > 0)
+            if (ImportWarnings.Count > 0)
                 func = Debug.LogWarning;
-            if (this.ImportErrors.Count > 0)
+            if (ImportErrors.Count > 0)
                 func = Debug.LogError;
 
             StringBuilder msg = new StringBuilder();
-            msg.AppendFormat("Imported prefab '{0}' from '{1}' with {2} warnings and {3} errors.\n", prefabPath, this.Tiled2UnityXmlPath, this.ImportWarnings.Count, this.ImportErrors.Count);
+            msg.AppendFormat("Imported prefab '{0}' from '{1}' with {2} warnings and {3} errors.\n", prefabPath, Tiled2UnityXmlPath, ImportWarnings.Count, ImportErrors.Count);
 
-            foreach (string error in this.ImportErrors)
-            {
+            foreach (string error in ImportErrors)
                 msg.AppendLine(error);
-            }
 
-            foreach (string warning in this.ImportWarnings)
-            {
+
+            foreach (string warning in ImportWarnings)
                 msg.AppendLine(warning);
-            }
+
 
             func(msg.ToString());
         }
@@ -201,11 +195,10 @@ namespace Tiled2Unity
 #endif
 
         // In case this behaviour leaks out of an import and into the runtime, complain.
-        private void Update()
+        void Update()
         {
-            Debug.LogError(String.Format("ImportBehaviour based on '{0}' left in scene after importing. Check if import was successful and remove this object from scene {1}", this.Tiled2UnityXmlPath, this.gameObject.name));
+            Debug.LogError(String.Format("ImportBehaviour based on '{0}' left in scene after importing. Check if import was successful and remove this object from scene {1}", Tiled2UnityXmlPath, gameObject.name));
         }
-
     }
 }
 #endif // if UNITY_WEBPLAYER

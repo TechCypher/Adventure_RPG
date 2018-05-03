@@ -9,10 +9,8 @@ public class QuestObject : MonoBehaviour
     public string startText;
     public string endText;
 
-    public void StartQuest()
-    {
-        QM.ShowQuest(startText);
-    }
+    public void StartQuest() { QM.ShowQuest(startText); }
+
     public void EndQuest()
     {
         QM.ShowQuest(endText);
