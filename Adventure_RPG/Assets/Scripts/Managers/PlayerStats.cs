@@ -19,7 +19,7 @@ public class PlayerStats : MonoBehaviour
     #endregion
     void Start()
     {
-        health = FindObjectOfType<Health>();
+        health = FindObjectOfType<Health>(); // Finds the players health
         if (currentXP > 0 && currentXP < requiredXP[currentLevel + 1]) { currentLevel = 1; }
         currentHP = HPLevels[1];
         currentAttack = attackLevels[1];

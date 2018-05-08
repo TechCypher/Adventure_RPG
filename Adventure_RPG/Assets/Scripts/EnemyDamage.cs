@@ -14,16 +14,16 @@ public class EnemyDamage : MonoBehaviour
 
     void Start()
     {
-        stats = FindObjectOfType<PlayerStats>();
+        stats = FindObjectOfType<PlayerStats>(); // Find the players stats
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Slime")
+        if (other.gameObject.tag == "Slime") // If the player collides with the slime
         {
-            currentDamage = damage + stats.currentAttack;
+            currentDamage = damage + stats.currentAttack; // Damage the slime
             other.gameObject.GetComponent<EnemyHealth>().Damage(currentDamage);
-            Instantiate(damageParticle, hitPoint.position, hitPoint.rotation);
+            Instantiate(damageParticle, hitPoint.position, hitPoint.rotation); // Display damage particles
             var clone = (GameObject)Instantiate(damageNumber, hitPoint.position, Quaternion.Euler(Vector3.zero));
             clone.GetComponent<DamageNumber>().damage = damage;
         }
